@@ -1,0 +1,18 @@
+{
+  "name": "gerardkok-hiera5_ldap",
+  "version": "0.1.0",
+  "author": "gerardkok",
+  "summary": "Hiera 5 backend for LDAP lookups",
+  "license": "Apache-2.0",
+  "source": "https://github.com/gerardkok/hiera5-ldap",
+  "project_page": "https://github.com/gerardkok/hiera5-ldap",
+  "issues_url": "https://github.com/gerardkok/hiera5-ldap/issues",
+  "dependencies": [],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.9.0"
+    }
+  ],
+  "data_provider": null
+}
