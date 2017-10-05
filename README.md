@@ -1,5 +1,7 @@
 # hiera5_ldap
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/gerardkok/puppet-hiera5_ldap?branch=master)](https://bettercodehub.com/)
+
 #### Table of Contents
 
 1. [Description](#description)
