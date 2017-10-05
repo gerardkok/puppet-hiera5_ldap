@@ -26,7 +26,7 @@ This backend only reads from LDAP, and does not need write access.
 
 This backend leverages the [jruby-ldap](https://rubygems.org/gems/jruby-ldap) ruby gem. This gem needs to be installed on your puppet master:
 ```bash
-$ /opt/puppetlabs/bin/puppetserver gem install jruby-ldap
+$ sudo /opt/puppetlabs/bin/puppetserver gem install jruby-ldap
 ```
 You'll also need read access to the LDAP instance you want to query from your puppet master.
 
@@ -70,7 +70,7 @@ you'll get your entire LDAP tree as result.
 
 ## Usage
 
-The above examples are all 'direct'; the LDAP URL is just a parameter to the heira call. You can also use 'indirect' LDAP queries, where the actual query is looked up in a yaml file, much like regular hiera keys are looked up. This allows for [automatic class parameter lookup](https://docs.puppet.com/puppet/4.9/hiera_automatic.html).
+The above examples are all 'direct'; the LDAP URL is just a parameter to the hiera call. You can also use 'indirect' LDAP queries, where the actual query is looked up in a yaml file, much like regular hiera keys are looked up. This allows for [automatic class parameter lookup](https://docs.puppet.com/puppet/4.9/hiera_automatic.html).
 
 For example, if you configure your `hiera.yaml` like this:
 ~~~
@@ -163,9 +163,9 @@ LDAP filter to use, follows regular LDAP filter syntax (i.e. you can write compl
 
 ## Limitations
 
-This backend uses jruby-ldap instead of [net/ldap](https://rubygems.org/gems/net-ldap), because net/ldap requires Ruby 2.0 support, but that is not yet the default on a puppet 4/5 master. I intend to rewrite this to net/ldap once JRuby on a puppet 4/5 master becomes Ruby 2.0 compatible.
+This backend uses jruby-ldap instead of [net/ldap](https://rubygems.org/gems/net-ldap), because net/ldap requires Ruby 2.0 support, but that is not yet the default on a puppet 4/5 master. I intend to rewrite this to net/ldap once JRuby on a puppet master becomes Ruby 2.0 compatible.
 
-One of the limitations of using jruby-ldap is that absence of StartTLS.
+One of the limitations of using jruby-ldap is the absence of StartTLS.
 
 Further limitations:
 - no unit tests to speak of (I have currently no idea how to test a custom hiera backend)
