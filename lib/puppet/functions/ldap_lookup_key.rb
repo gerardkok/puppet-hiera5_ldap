@@ -1,9 +1,9 @@
 Puppet::Functions.create_function(:ldap_lookup_key) do
 
-  if Puppet.features.jruby_ldap?
+  begin
     require 'ldap'
-  else
-    raise Puppet::DataBinding::LookupError, "Must install jruby-ldap gem to use hiera-ldap"
+  rescue
+    raise Puppet::DataBinding::LookupError, "Must install jruby-ldap gem to use hiera5_ldap"
   end
 
   dispatch :ldapsearch_lookup_key do
